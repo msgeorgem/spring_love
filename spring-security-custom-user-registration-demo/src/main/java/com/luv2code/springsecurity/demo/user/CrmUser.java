@@ -35,6 +35,7 @@ public class CrmUser {
 	@NotNull(message = "is required")
 	@Size(min = 1, message = "is required")
 	private String email;
+	
 
 	public CrmUser() {
 
@@ -87,5 +88,6 @@ public class CrmUser {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 
 }

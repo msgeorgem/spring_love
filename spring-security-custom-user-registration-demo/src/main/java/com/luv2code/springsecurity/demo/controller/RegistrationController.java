@@ -1,6 +1,10 @@
 package com.luv2code.springsecurity.demo.controller;
 
+
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.logging.Logger;
+
 
 import javax.validation.Valid;
 
@@ -29,18 +33,24 @@ public class RegistrationController {
 	
     private Logger logger = Logger.getLogger(getClass().getName());
     
+    private Map<String, String> roles;
+    
 	@InitBinder
 	public void initBinder(WebDataBinder dataBinder) {
 		
 		StringTrimmerEditor stringTrimmerEditor = new StringTrimmerEditor(true);
 		
 		dataBinder.registerCustomEditor(String.class, stringTrimmerEditor);
-	}	
+	}
+	
 	
 	@GetMapping("/showRegistrationForm")
 	public String showMyLoginPage(Model theModel) {
 		
 		theModel.addAttribute("crmUser", new CrmUser());
+		
+		// add roles to the model for form display
+		theModel.addAttribute("roles", roles);
 		
 		return "registration-form";
 	}

@@ -106,7 +106,6 @@
 							<form:input path="email" placeholder="email (*)" class="form-control" />
 						</div>
 						
-						
 
 						<!-- Register Button -->
 						<div style="margin-top: 10px" class="form-group">						
